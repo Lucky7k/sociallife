@@ -1,6 +1,6 @@
 <?php
 
-    require '../config.php';
+    require("config.php");
 
     try{
         $conexao = new PDO("mysql:host=$host; dbname=$db",
@@ -48,13 +48,14 @@
 
 function insereNovoPost($username, $post){ 
     global $conexao;
-
+    date_default_timezone_set("America/Sao_Paulo");
     $stm = $conexao->prepare
-    ("INSERT INTO feed (usernameCreator, text)
-    VALUES (:username, :text)");
+    ("INSERT INTO feed (usernameCreator, text, dateTime)
+    VALUES (:username, :text, :dateTime)");
 
     $stm->bindParam(':username', $username);
     $stm->bindParam(':text', $post);
+    $stm->bindParam(':dateTime', date("Y-m-d H:i:s a", time()));
 
     $stm->execute();
 

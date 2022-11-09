@@ -16,10 +16,10 @@
             $dados = retornaDadosDoPerfil($_SESSION['username'], $_SESSION['password']);
         ?>
         <div class="flex horizontal box"> 
-            <img src="<?php echo "View/imagens/".$dados['foto'] ?>" alt="" style="width: 20%; height: 20%;" class="foto">
+            <img src="<?php echo "imagens/".$dados['foto'] ?>" alt="" style="width: 20%; height: 20%;" class="foto">
             <div id="perfil">
                 <h2><?php echo $dados['username'] ?></h2>
-                <p>Email: <?php echo $dados ['email'] ?></p>
+                <p>Email: <?php echo $dados['email'] ?></p>
                 <p>
                     <?php
                         list($ano, $mes, $dia) = explode('-', $dados['dtNasc']);

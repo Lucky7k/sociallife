@@ -8,10 +8,10 @@
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
-        header('Location:'.'../View/perfil.php');
+        header('Location:'.'../perfil.php');
         die(); 
     }else{ 
-        header('Location:'.'../View/index.php', true, 404);
+        header('Location:'.'../index.php', true, 404);
         die();
         
     }

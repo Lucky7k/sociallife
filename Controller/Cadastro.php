@@ -8,20 +8,19 @@
         }
         if(insereNovoUsuario($_POST['username'], $_POST['password'],
         $_POST['email'], $_POST['date'], $foto)){ 
-            $dir = '../View/imagens/';
+            $dir = '../imagens/';
             move_uploaded_file($_FILES['foto']['tmp_name'],$dir.$foto);
-            echo("Imagem enviada com sucesso");
-
             session_start();
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['password'] = $_POST['password'];
-
-            echo "<form action='../View/perfil.php' method='post>";
-            echo "<input type='submit' class='btn btn-light' value='Entrar'>";
-            echo "</form>";
+            session_start();
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            header('Location:'.'../index.php');
+            die(); 
         }else{
             echo "<br><br>Erro no cadastro.";
-            echo "<form action='../View/index.php' method='post'>";
+            echo "<form action='../index.php' method='post'>";
             echo "<input type='submit' class'btn btn-light' values='Tentar novamente>";
             echo "</form>";
         }
