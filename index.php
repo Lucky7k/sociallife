@@ -1,8 +1,27 @@
-<?php
-
-require_once __DIR__ . '/Router.php';
-
-$requestUri = $_SERVER['REQUEST_URI'];
-
-$router = new Router;
-$router->run($requestUri);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+</style>
+</head>
+<body>
+    <div class="flex horizontal center">
+        <div class="flex vertical center box card">
+        <h2>Entrar</h2>
+        <form action="Controller/Logar.php" method="post" class ="flex vertical">
+            <input type="text" name="username" id="username" placeholder="Nome de usuário">
+            <input type="password" name="password" id="password" placeholder="Senha">
+            <input class="button" type="submit" value="CONECTAR-SE">
+    </form>
+    <p>Não possui uma conta?</p>
+    <a class="button" href="cadastro.php">CADASTRAR-SE</a>
+    </div>
+ </div>
+</body>
+</html>
