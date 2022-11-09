@@ -1,7 +1,7 @@
 <ul id="menu" class="flex horizontal center">
-    <li>
-        <img id="logo" src="https://o.remove.bg/downloads/3aec8fc5-d725-414c-b4f6-e689d3c7ff61/image-removebg-preview.png" alt="ctrltwitter logo">
-    </li>
+<li>
+    <img id="logo" src="imagens/android-chrome-192x192.png" alt="sociallife logo">
+</li>
 <li>
     <a href="perfil.php"> <i class="bi bi-person-circle"></i>Perfil</a>
 </li>
