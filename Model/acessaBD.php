@@ -20,15 +20,17 @@
         $query = $conexao->query("SELECT username FROM user
          WHERE username = '$username'");
          if ($query->rowCount()>0){
-            echo "Nome de usuário já usado";
+            header('Location:'.'../cadastro.php?erro=2');
+            die();
             return false;
          }
 
          $query = $conexao->query("SELECT username FROM user
          WHERE email = '$email'");
          if ($query->rowCount()>0){
-            echo "Email já usado";
-            return false;
+            header('Location:'.'../cadastro.php?erro=3');
+            die();
+            // return false;
     }
     $stm = $conexao->prepare
     ("INSERT INTO user(username, password, email, dtNasc, foto)
