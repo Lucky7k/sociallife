@@ -1,19 +1,11 @@
 <?php
     require("../Model/acessaBD.php");
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if(confereCadastro($username, $password)){
-        session_start();
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
+    if(confereCadastro($_POST['username'], $_POST['password'])){
+        setcookie("autenticacao", $_POST['username'], time()+36000, "/"); 
         header('Location:'.'../perfil.php');
-        die(); 
     }else{ 
-        header('Location:'.'../index.php', true, 404);
-        die();
-        
+        header('Location:'.'../index.php?erro=1');
     }
 
     ?>

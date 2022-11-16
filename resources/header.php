@@ -12,7 +12,7 @@
     <a href="usuarios.php"> <i class="bi bi-person-lines-fill"></i> Usuários</a>
 </li>
 <li>
-    <a href="index.php"><i class="bi bi-door-open"></i>Sair</a>
+    <a href="resources/sair.php"><i class="bi bi-door-open"></i>Sair</a>
 </li>
     
 </ul>

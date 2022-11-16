@@ -1,10 +1,8 @@
 <?php
-    if ($_SESSION['username'] == null || strlen($_SESSION['username'])<4) {
-        header('Location:'.'index.php');
+    if(!isset($_COOKIE['autenticacao'])){
+        header('Location:'.'index.php?erro=3');
     }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
