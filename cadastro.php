@@ -1,3 +1,9 @@
+<?php
+    if ($_SESSION['username'] != null || strlen($_SESSION['username'])>4) {
+        header('Location:'.'perfil.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

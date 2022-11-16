@@ -1,3 +1,11 @@
+<?php
+    if ($_SESSION['username'] == null || strlen($_SESSION['username'])<4) {
+        header('Location:'.'index.php');
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
